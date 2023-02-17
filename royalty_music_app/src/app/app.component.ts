@@ -10,10 +10,11 @@ import {Howl} from "howler";
 export class AppComponent implements OnInit{
   title = 'music-player-app';
 
+  // need them for Howler.js to read the MP3 files.
   constructor() {
 
   }
-
+  // need them for Howler.js to read the MP3 files.
   ngOnInit(): void
   {
 
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit{
 
   songsIndex: number = 0;
   songName: string = "";
+  songArtist: string ="";
   song: MP3Song[] =
     [
       {
@@ -131,6 +133,42 @@ export class AppComponent implements OnInit{
           html5: true
         })
       },
+      {
+        name: "Weeknds",
+        artist: "DayFox",
+        index: 12,
+        howl: new Howl({
+          src: ["./assets/MP3_Files/Weeknds.mp3"],
+          html5: true
+        })
+      },
+      {
+        name: "Lifelike",
+        artist: "AlexiAction",
+        index: 13,
+        howl: new Howl({
+          src: ["./assets/MP3_Files/Lifelike.mp3"],
+          html5: true
+        })
+      },
+      {
+        name: "Lofi Study",
+        artist: "FASSounds",
+        index: 14,
+        howl: new Howl({
+          src: ["./assets/MP3_Files/LofiStudy.mp3"],
+          html5: true
+        })
+      },
+      {
+        name: "Coding Night",
+        artist: "FASSounds",
+        index: 15,
+        howl: new Howl({
+          src: ["./assets/MP3_Files/CodingNight.mp3"],
+          html5: true
+        })
+      },
 
     ]
 
@@ -139,6 +177,7 @@ export class AppComponent implements OnInit{
       this.song[index].howl.play();
       this.songsIndex = index;
       this.songName = this.song[index].name
+      this.songArtist = this.song[index].artist
     }
   }
 
@@ -151,26 +190,32 @@ export class AppComponent implements OnInit{
 
     this.song[index].howl.stop();
     this.songName = "";
+    this.songArtist = "";
   }
 
   skip() {
     this.songName = ""
+    this.songArtist = "";
     this.song[this.songsIndex].howl.stop();
-    if (this.songsIndex == 11) {
+    if (this.songsIndex == 15) {
       this.songsIndex = 0;
       this.songName = ""
+      this.songArtist = "";
     } else {
       this.songsIndex++
       this.songName = ""
+      this.songArtist = "";
     }
   }
 
   prev() {
     this.songName = ""
+    this.songArtist = "";
     this.song[this.songsIndex].howl.stop();
     if (this.songsIndex == 0) {
-      this.songsIndex = 11
+      this.songsIndex = 15
       this.songName = ""
+      this.songArtist = "";
     } else {
       this.songsIndex--;
 

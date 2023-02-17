@@ -20,10 +20,7 @@ h5
   text-align: center;
   color: #e0f8ff;
 }
-.container {
-  height: 200px;
-  position: relative;
-  }
+
 
 .center {
   display: flex;

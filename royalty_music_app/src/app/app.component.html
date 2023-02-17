@@ -23,7 +23,7 @@
 <p style="text-align: center"><b>Note: </b> After skipping or going back on a song track by number, press the play button to hear that song.</p>
 <footer title="Remember, if you need a playlist reference, head to the navbar on the top of the page and click on the tab 'Library'" style="color: lightcyan">
   <p> Song number: {{songsIndex}} </p>
-  <p> Now playing: {{songName}} </p>
+  <p> Now playing: {{songName}} by {{songArtist}} </p>
   <i title="Click this to go back to the last song" (click)="prev()" type="button" class="fas fa-fast-backward fa-fw fa-2x"></i>
   <i title="Click this to play the song" (click)="play(songsIndex)"  class="fas fa-play fa-fw fa-2x"><br></i>
   <i title="Click this to pause the song" (click)="pause(songsIndex)" class="fas fa-pause fa-fw fa-2x"></i>
